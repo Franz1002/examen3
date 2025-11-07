@@ -1,10 +1,52 @@
 <main class="main">
-  <h1 style="text-align:center; margin-top:20px;">
-    Examen - Consumo de APIs
-  </h1>
+  <h1 class="title">EXAMEN FINAL - CONSUMO DE APIS</h1>
 
-  <!-- Aquí cargaremos las vistas -->
-  <app-freetogame></app-freetogame>
+  <!-- MENÚ DE TABS -->
+  <nav class="tabs">
+    <button (click)="activeTab = 'freetogame'" [class.active]="activeTab === 'freetogame'">🎮 FreeToGame</button>
+    <button (click)="activeTab = 'dogapi'" [class.active]="activeTab === 'dogapi'">🐶 API 2</button>
+    <button (click)="activeTab = 'countries'" [class.active]="activeTab === 'countries'">🌦️ API 3</button>
+    <button (click)="activeTab = 'nasa'" [class.active]="activeTab === 'nasa'">📰 API 4</button>
+    <button (click)="activeTab = 'api5'" [class.active]="activeTab === 'api5'">🪐 API 5</button>
+    <button (click)="activeTab = 'api6'" [class.active]="activeTab === 'api6'">📚 API 6</button>
+    <button (click)="activeTab = 'api7'" [class.active]="activeTab === 'api7'">🎬 API 7</button>
+    <button (click)="activeTab = 'api8'" [class.active]="activeTab === 'api8'">🧠 API 8</button>
+  </nav>
 
-  <router-outlet />
+  <!-- CONTENIDO DE LAS TABS -->
+  <section class="tab-content">
+    <!-- TAB 1 -->
+    <div *ngIf="activeTab === 'freetogame'">
+      <app-freetogame></app-freetogame>
+    </div>
+
+    <!-- TABS RESTANTES (se llenarán luego) -->
+    <div *ngIf="activeTab === 'dogapi'">
+      <app-dogapi></app-dogapi>
+    </div>
+
+    <div *ngIf="activeTab === 'countries'">
+      <app-countries></app-countries>
+    </div>
+
+    <div *ngIf="activeTab === 'nasa'">
+      <app-nasa></app-nasa>
+    </div>
+
+    <div *ngIf="activeTab === 'api5'">
+      <h2>API 5 - En desarrollo...</h2>
+    </div>
+
+    <div *ngIf="activeTab === 'api6'">
+      <h2>API 6 - En desarrollo...</h2>
+    </div>
+
+    <div *ngIf="activeTab === 'api7'">
+      <h2>API 7 - En desarrollo...</h2>
+    </div>
+
+    <div *ngIf="activeTab === 'api8'">
+      <h2>API 8 - En desarrollo...</h2>
+    </div>
+  </section>
 </main>

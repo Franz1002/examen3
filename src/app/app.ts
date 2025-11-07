@@ -1,15 +1,24 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
 import { FreetogameComponent } from './components/freetogame/freetogame';
 import { HttpClientModule } from '@angular/common/http';
-
+import { CommonModule } from '@angular/common';
+import { DogapiComponent } from './components/dogapi/dogapi';
+import { CountriesComponent } from './components/countries/countries';
+import { NasaComponent } from './components/nasa/nasa';
+  
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HttpClientModule,
-      FreetogameComponent],
+  imports: [
+    HttpClientModule,
+    CommonModule,
+    FreetogameComponent,
+    DogapiComponent,
+    CountriesComponent,
+    NasaComponent,
+  ],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('examen');
+  activeTab = 'freetogame';
 }

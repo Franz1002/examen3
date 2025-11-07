@@ -1,0 +1,21 @@
+<div class="container" *ngIf="!loading && !error; else loadingOrError">
+    <h1 class="title">🐕 Dog API Viewer</h1>
+    <p class="subtitle">¡Descubre una imagen aleatoria de nuestros amigos peludos!</p>
+
+    <div class="dog-card">
+        <div class="dog-frame">
+            <img [src]="imageUrl" alt="Random Dog" class="dog-img animate-fade" />
+        </div>
+    </div>
+
+    <button (click)="loadDog()" class="btn">
+        <span>🐾 Ver otro perro</span>
+    </button>
+</div>
+
+<ng-template #loadingOrError>
+    <div class="status">
+        <div *ngIf="loading" class="loader"></div>
+        <p *ngIf="error">{{ error }}</p>
+    </div>
+</ng-template>

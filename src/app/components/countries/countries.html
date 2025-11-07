@@ -1,0 +1,25 @@
+<div class="container" *ngIf="!loading && !error; else loadingOrError">
+    <h1 class="title">🌍 Lista de Países (REST Countries API)</h1>
+
+    <div class="countries-grid">
+        <div class="country-card" *ngFor="let country of countries">
+            <img [src]="country.flags.png" [alt]="country.name.common" class="flag" />
+            <div class="info">
+                <h2>{{ country.name.common }}</h2>
+                <p><strong>Capital:</strong> {{ country.capital ? country.capital[0] : '—' }}</p>
+                <p><strong>Región:</strong> {{ country.region }} ({{ country.subregion || '—' }})</p>
+                <p><strong>Población:</strong> {{ country.population | number }}</p>
+                <p><strong>Área:</strong> {{ country.area | number }} km²</p>
+                <p><strong>Idiomas:</strong> {{ getLanguages(country) }}</p>
+                <p><strong>Moneda:</strong> {{ getCurrency(country) }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #loadingOrError>
+    <div class="status">
+        <div *ngIf="loading" class="loader"></div>
+        <p *ngIf="error">{{ error }}</p>
+    </div>
+</ng-template>
