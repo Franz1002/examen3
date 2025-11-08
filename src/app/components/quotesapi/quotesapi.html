@@ -1,5 +1,8 @@
 <div class="quote-container" *ngIf="!loading && quote; else loadingTpl">
+    
+
     <div class="quote-card animate">
+        <h1 class="title">Frases </h1>
         <p class="quote-text">“{{ quote.content }}”</p>
         <h3 class="quote-author">— {{ quote.author }}</h3>
 

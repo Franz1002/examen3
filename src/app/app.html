@@ -1,22 +1,21 @@
 <main class="main">
-  <h1 class="title">EXAMEN FINAL - CONSUMO DE 8 APIS</h1>
+  <h1 class="title">EXAMEN FINAL - CONSUMO DE APIS</h1>
 
   <div class="container">
 
     <div class="tabs">
       <div class="tab" [class.active]="activeTab === 'home'" (click)="activeTab = 'home'"><span>🏠</span> Inicio</div>
-      <div class="tab" [class.active]="activeTab === 'freetogame'" (click)="activeTab = 'freetogame'"><span>1</span>
-        FreeToGame</div>
-      <div class="tab" [class.active]="activeTab === 'dogapi'" (click)="activeTab = 'dogapi'"><span>2</span> API 2</div>
-      <div class="tab" [class.active]="activeTab === 'countries'" (click)="activeTab = 'countries'"><span>3</span> API 3
+      <div class="tab" [class.active]="activeTab === 'freetogame'" (click)="activeTab = 'freetogame'"><span>1</span>Juegos Gratis</div>
+      <div class="tab" [class.active]="activeTab === 'dogapi'" (click)="activeTab = 'dogapi'"><span>2</span>Perros</div>
+      <div class="tab" [class.active]="activeTab === 'countries'" (click)="activeTab = 'countries'"><span>3</span>
+        Países</div>
+      <div class="tab" [class.active]="activeTab === 'nasa'" (click)="activeTab = 'nasa'"><span>4</span>NASA</div>
+      <div class="tab" [class.active]="activeTab === 'fbi'" (click)="activeTab = 'fbi'"><span>5</span> FBI</div>
+      <div class="tab" [class.active]="activeTab === 'quotesapi'" (click)="activeTab = 'quotesapi'"><span>6</span> Frases
       </div>
-      <div class="tab" [class.active]="activeTab === 'nasa'" (click)="activeTab = 'nasa'"><span>4</span> API 4</div>
-      <div class="tab" [class.active]="activeTab === 'fbi'" (click)="activeTab = 'fbi'"><span>5</span> API 5</div>
-      <div class="tab" [class.active]="activeTab === 'quotesapi'" (click)="activeTab = 'quotesapi'"><span>6</span> API 6
-      </div>
-      <div class="tab" [class.active]="activeTab === 'weatherapi'" (click)="activeTab = 'weatherapi'"><span>7</span> API
-        7</div>
-      <div class="tab" [class.active]="activeTab === 'openlibrary'" (click)="activeTab = 'openlibrary'"><span>8</span> API 8</div>
+      <div class="tab" [class.active]="activeTab === 'weatherapi'" (click)="activeTab = 'weatherapi'"><span>7</span> Clima</div>
+      <div class="tab" [class.active]="activeTab === 'openlibrary'" (click)="activeTab = 'openlibrary'"><span>8</span>
+        Libro</div>
     </div>
 
     <div class="form-section">
@@ -55,6 +54,9 @@
           <app-openlibrary></app-openlibrary>
         </div>
       </section>
+
     </div>
+
   </div>
+
 </main>

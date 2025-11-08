@@ -1,30 +1,117 @@
 .container {
-    padding: 20px;
     text-align: center;
+    padding: 40px 20px;
+    background: radial-gradient(circle at top, #0b0f29 0%, #1a237e 100%);
+    color: #e3f2fd;
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.title {
+    font-size: clamp(2rem, 4vw, 2.6rem);
+    color: #90caf9;
+    margin-bottom: 25px;
+    text-shadow: 0 2px 10px rgba(144, 202, 249, 0.7);
 }
 
 .asteroids-grid {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
     justify-content: center;
-    gap: 15px;
+    margin-top: 20px;
+    padding: 10px;
 }
 
 .asteroid-card {
-    width: 250px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    padding: 15px;
-    background: #fff;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(144, 202, 249, 0.3);
+    border-radius: 14px;
+    padding: 20px;
+    color: #e0f7fa;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 4px 15px rgba(13, 71, 161, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .asteroid-card:hover {
-    transform: scale(1.05);
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 8px 25px rgba(30, 136, 229, 0.6);
+}
+
+.asteroid-card h2 {
+    font-size: 1.2rem;
+    color: #bbdefb;
+    margin-bottom: 8px;
+}
+
+.asteroid-card p {
+    font-size: 0.95rem;
+    margin: 6px 0;
 }
 
 .hazard {
-    color: red;
+    color: #ef5350;
     font-weight: bold;
+}
+
+.hazard::after {
+    content: " 🚨";
+}
+
+.loader {
+    width: 60px;
+    height: 60px;
+    border: 6px solid rgba(255, 255, 255, 0.2);
+    border-top: 6px solid #42a5f5;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 100px auto;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media (max-width: 1024px) {
+    .asteroids-grid {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 2rem;
+    }
+
+    .asteroid-card h2 {
+        font-size: 1.1rem;
+    }
+
+    .asteroid-card p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 25px 10px;
+    }
+
+    .title {
+        font-size: 1.6rem;
+        margin-bottom: 15px;
+    }
+
+    .asteroids-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .asteroid-card {
+        width: 100%;
+    }
 }

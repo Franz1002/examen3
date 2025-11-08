@@ -22,7 +22,7 @@ export class NasaComponent implements OnInit {
   ngOnInit(): void {
     this.nasaNeoService.getAsteroids().subscribe({
       next: (data) => {
-        this.asteroids = data.slice(0, 20); 
+        this.asteroids = data.slice(0, 100); 
         this.loading = false;
       },
       error: (err) => {

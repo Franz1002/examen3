@@ -8,20 +8,22 @@
     color: #2a2a2a;
     font-family: 'Poppins', sans-serif;
     text-align: center;
-    padding: 20px;
+    padding: 40px 20px;
+    box-sizing: border-box;
 }
 
 .title {
-    font-size: 2.5rem;
+    font-size: clamp(2rem, 4vw, 2.5rem);
     color: #2a2a2a;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     margin-bottom: 10px;
 }
 
 .subtitle {
-    font-size: 1rem;
+    font-size: clamp(1rem, 2vw, 1.2rem);
     color: #444;
     margin-bottom: 30px;
+    max-width: 600px;
 }
 
 .dog-card {
@@ -29,6 +31,7 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 25px;
+    width: 100%;
 }
 
 .dog-frame {
@@ -38,6 +41,8 @@
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     overflow: hidden;
+    max-width: 450px;
+    width: 100%;
 }
 
 .dog-frame:hover {
@@ -46,8 +51,8 @@
 }
 
 .dog-img {
-    max-width: 400px;
     width: 100%;
+    height: auto;
     border-radius: 15px;
     object-fit: cover;
     transition: transform 0.3s ease;
@@ -62,14 +67,12 @@
         opacity: 0;
         transform: scale(0.95);
     }
-
     to {
         opacity: 1;
         transform: scale(1);
     }
 }
 
-/* ===== BOTÓN ===== */
 .btn {
     background: linear-gradient(90deg, #ff9800, #ff5722);
     border: none;
@@ -111,16 +114,51 @@
 }
 
 @media (max-width: 768px) {
+    .container {
+        padding: 30px 15px;
+    }
+
     .title {
         font-size: 2rem;
     }
 
-    .dog-img {
-        max-width: 300px;
+    .subtitle {
+        font-size: 0.95rem;
+        margin-bottom: 20px;
+    }
+
+    .dog-frame {
+        max-width: 350px;
     }
 
     .btn {
         font-size: 0.9rem;
         padding: 10px 22px;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 1.8rem;
+    }
+
+    .subtitle {
+        font-size: 0.9rem;
+        max-width: 90%;
+    }
+
+    .dog-frame {
+        padding: 10px;
+        max-width: 300px;
+    }
+
+    .dog-img {
+        border-radius: 10px;
+    }
+
+    .btn {
+        width: 100%;
+        max-width: 250px;
+        padding: 10px;
     }
 }

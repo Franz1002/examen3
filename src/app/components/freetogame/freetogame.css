@@ -6,29 +6,29 @@
     font-family: 'Poppins', sans-serif;
     background: linear-gradient(135deg, #0a0f1c 0%, #1a1f2e 100%);
     min-height: 100vh;
+    box-sizing: border-box;
 }
 
 .title {
     text-align: center;
     margin-bottom: 30px;
-    font-size: 2.5rem;
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
     color: #00e5ff;
     font-weight: 600;
     text-shadow: 0 0 10px #00e5ff;
 }
 
 .games-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 25px;
+    justify-content: center;
 }
 
 .game-card {
     background: #101521;
     border-radius: 14px;
     overflow: hidden;
-    width: 300px;
     display: flex;
     flex-direction: column;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -99,7 +99,7 @@
 }
 
 .game-info h2 {
-    font-size: 1.3rem;
+    font-size: clamp(1rem, 2vw, 1.3rem);
     color: #00e5ff;
     margin: 0;
 }
@@ -108,14 +108,15 @@
     font-size: 0.9rem;
     color: #d0d0d0;
     line-height: 1.3rem;
-    height: 40px;
+    max-height: 40px;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
 .tags {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
 }
 
 .tag {
@@ -168,12 +169,25 @@
 }
 
 @media (max-width: 768px) {
-    .game-card {
-        width: 90%;
+    .container {
+        padding: 15px;
     }
 
     .title {
-        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    .game-card {
+        width: 100%;
+    }
+
+    .game-info {
+        padding: 12px;
+    }
+
+    .play-btn {
+        padding: 8px 16px;
+        font-size: 0.9rem;
     }
 }
 
@@ -182,11 +196,16 @@
         font-size: 1.6rem;
     }
 
-    .game-info h2 {
-        font-size: 1.1rem;
+    .description {
+        max-height: none;
     }
 
-    .description {
-        height: auto;
+    .tags {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .meta {
+        font-size: 0.75rem;
     }
 }

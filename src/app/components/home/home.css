@@ -4,24 +4,35 @@ body {
 }
 
 .container {
-    width: 90%;
-    margin: 20px auto;
+    width: 80%;
+    margin: 0px auto 0px auto;
     background: #3c4164;
     border-radius: 15px;
     padding: 30px;
     color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.form-section {
+    background: #4f5477;
+    padding: 25px;
+    border-radius: 10px;
 }
 
 .form-section h2 {
-    margin-bottom: 20px;
-    font-size: 22px;
+    margin-bottom: 25px;
+    font-size: 30px;
     font-weight: 700;
+    text-align: center;
 }
 
 .row {
     display: flex;
     gap: 25px;
     margin-bottom: 20px;
+    flex-wrap: wrap;
 }
 
 .input-box {
@@ -32,15 +43,17 @@ body {
 
 .input-box.small {
     flex: 0.3;
+    min-width: 100px;
 }
 
 .input-box.full {
-    flex: 1;
+    flex: 1 1 100%;
 }
 
 label {
     margin-bottom: 6px;
     font-size: 14px;
+    font-weight: 600;
 }
 
 input,
@@ -49,13 +62,14 @@ select {
     border-radius: 6px;
     border: none;
     outline: none;
-    background: #4f5477;
+    background: #3c4164;
     color: #fff;
+    font-size: 20px;
 }
 
 .btn {
-    margin-top: 20px;
-    width: 150px;
+    margin-top: 25px;
+    width: 160px;
     padding: 12px;
     border: none;
     border-radius: 8px;
@@ -63,7 +77,64 @@ select {
     color: white;
     cursor: pointer;
     font-size: 16px;
+    font-weight: 600;
     display: block;
     margin-left: auto;
     margin-right: auto;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #10ac84;
+}
+
+@media (max-width: 900px) {
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .row {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .input-box.small {
+        flex: 1 1 100%;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .form-section {
+        padding: 20px;
+    }
+
+    .form-section h2 {
+        font-size: 20px;
+    }
+
+    input,
+    select {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 400px) {
+    .container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .form-section {
+        padding: 15px;
+    }
+
+    .btn {
+        font-size: 14px;
+        padding: 10px;
+    }
 }

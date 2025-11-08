@@ -15,7 +15,7 @@ export class OpenLibraryService {
 
   getBooks(): Observable<OpenLibraryBook[]> {
     return this.http.get<any>(this.apiUrl).pipe(
-      map(res => res.docs.slice(0, 12)) 
+      map(res => res.docs.slice(0, 100)) 
     );
   }
 }
