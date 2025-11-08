@@ -1,0 +1,18 @@
+<div class="quote-container" *ngIf="!loading && quote; else loadingTpl">
+    <div class="quote-card animate">
+        <p class="quote-text">“{{ quote.content }}”</p>
+        <h3 class="quote-author">— {{ quote.author }}</h3>
+
+        <div class="tags">
+            <span class="tag" *ngFor="let tag of quote.tags">{{ tag }}</span>
+        </div>
+
+        <button class="btn" (click)="loadQuote()">🔄 Nueva frase</button>
+    </div>
+</div>
+
+<ng-template #loadingTpl>
+    <div class="loading">Cargando...</div>
+</ng-template>
+
+<div *ngIf="error" class="error">{{ error }}</div>

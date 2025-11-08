@@ -1,0 +1,27 @@
+.title {
+    text-align: center;
+    color: #1e293b;
+    margin-bottom: 20px;
+}
+
+.weather-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(430px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    
+}
+
+.weather-card {
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    color: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: transform 0.2s ease;
+}
+
+.weather-card:hover {
+    transform: scale(1.05);
+}

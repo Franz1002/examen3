@@ -1,0 +1,29 @@
+<div class="container" *ngIf="!loading && !error; else loadingOrError">
+    <h1 class="title">🕵️‍♂️ FBI - Personas Buscadas</h1>
+
+    <div class="fbi-grid">
+        <div class="fbi-card" *ngFor="let person of wantedList">
+            <img [src]="getImage(person)" [alt]="person.title" class="fbi-photo" />
+
+            <div class="fbi-info">
+                <h2>{{ person.title }}</h2>
+                <p><strong>Sexo:</strong> {{ person.sex || 'No especificado' }}</p>
+                <p><strong>Color de ojos:</strong> {{ person.eyes || '—' }}</p>
+                <p><strong>Color de cabello:</strong> {{ person.hair || '—' }}</p>
+
+                <p class="description">
+                    {{ person.description ? (person.description | slice:0:120) + '...' : 'Sin descripción' }}
+                </p>
+
+                <a [href]="person.url" target="_blank" class="btn">Ver caso completo</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #loadingOrError>
+    <div class="status">
+        <div *ngIf="loading" class="loader"></div>
+        <p *ngIf="error">{{ error }}</p>
+    </div>
+</ng-template>

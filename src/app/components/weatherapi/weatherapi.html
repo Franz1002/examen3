@@ -1,0 +1,18 @@
+<div *ngIf="!loading && !error; else loadingOrError">
+    <h2 class="title">🌤️ Clima actual en los 9 departamentos de Bolivia</h2>
+
+    <div class="weather-grid">
+        <div class="weather-card" *ngFor="let w of weathers">
+            <h3>{{ w.department }}</h3>
+            <p><strong>Temperatura:</strong> {{ w.temperature }} °C</p>
+            <p><strong>Viento:</strong> {{ w.windspeed }} km/h</p>
+            <p><strong>Código:</strong> {{ w.weathercode }}</p>
+            <p><small>{{ w.time | date: 'short' }}</small></p>
+        </div>
+    </div>
+</div>
+
+<ng-template #loadingOrError>
+    <p *ngIf="loading">Cargando datos...</p>
+    <p *ngIf="error">{{ error }}</p>
+</ng-template>

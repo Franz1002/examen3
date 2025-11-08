@@ -1,0 +1,73 @@
+.container {
+    padding: 20px;
+    text-align: center;
+}
+
+.fbi-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.fbi-card {
+    width: 250px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s;
+}
+
+.fbi-card:hover {
+    transform: scale(1.05);
+}
+
+.fbi-photo {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    background-color: #e0e0e0;
+    display: block;
+}
+
+/* Si la imagen no carga, mantenemos el espacio */
+.fbi-photo::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 250px;
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #e0e0e0;
+}
+
+.fbi-info {
+    padding: 10px;
+    text-align: left;
+}
+
+.description {
+    font-size: 0.9rem;
+    color: #555;
+    margin: 5px 0;
+    min-height: 50px;
+}
+
+.btn {
+    display: block;
+    text-align: center;
+    background-color: #1d3557;
+    color: white;
+    padding: 6px;
+    border-radius: 6px;
+    margin-top: 8px;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background-color: #457b9d;
+}
