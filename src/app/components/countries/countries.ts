@@ -22,12 +22,11 @@ export class CountriesComponent implements OnInit {
   ngOnInit(): void {
     this.countriesService.getCountries().subscribe({
       next: (data) => {
-        // 🔹 Filtrar solo países válidos (que tengan nombre y bandera)
+
         this.countries = data.filter(c =>
           c.name?.common && c.flags?.png
         );
 
-        // (Opcional) ordenar por población descendente
         this.countries.sort((a, b) => (b.population || 0) - (a.population || 0));
 
         this.loading = false;

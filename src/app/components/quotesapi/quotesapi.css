@@ -76,7 +76,6 @@
     margin-top: 20px;
 }
 
-/* Animación de entrada */
 .animate {
     animation: fadeIn 0.7s ease-in-out;
 }

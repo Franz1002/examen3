@@ -1,12 +1,13 @@
 import { TestBed } from '@angular/core/testing';
-import { Dogapi } from './dogapi';
 
-describe('Dogapi', () => {
-  let service: Dogapi;
+import { Openlibrary } from './openlibrary';
+
+describe('Openlibrary', () => {
+  let service: Openlibrary;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(Dogapi);
+    service = TestBed.inject(Openlibrary);
   });
 
   it('should be created', () => {

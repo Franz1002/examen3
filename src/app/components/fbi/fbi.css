@@ -32,7 +32,6 @@
     display: block;
 }
 
-/* Si la imagen no carga, mantenemos el espacio */
 .fbi-photo::before {
     content: "";
     display: block;

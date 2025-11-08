@@ -1,4 +1,3 @@
-/* ===== CONTENEDOR GENERAL ===== */
 .container {
     max-width: 1300px;
     margin: 0 auto;
@@ -18,7 +17,6 @@
     text-shadow: 0 0 10px #00e5ff;
 }
 
-/* ===== GRID DE JUEGOS ===== */
 .games-grid {
     display: flex;
     flex-wrap: wrap;
@@ -26,7 +24,6 @@
     gap: 25px;
 }
 
-/* ===== TARJETA DE JUEGO ===== */
 .game-card {
     background: #101521;
     border-radius: 14px;
@@ -44,7 +41,6 @@
     box-shadow: 0 8px 25px rgba(0, 229, 255, 0.5);
 }
 
-/* ===== IMAGEN + EFECTO HOVER ===== */
 .image-container {
     position: relative;
     width: 100%;
@@ -78,7 +74,6 @@
     opacity: 1;
 }
 
-/* ===== BOTÓN DE JUGAR ===== */
 .play-btn {
     background: linear-gradient(90deg, #00e5ff, #007bff);
     color: white;
@@ -96,7 +91,6 @@
     background: linear-gradient(90deg, #00ffa3, #00e5ff);
 }
 
-/* ===== INFORMACIÓN DEL JUEGO ===== */
 .game-info {
     padding: 15px 18px;
     display: flex;
@@ -141,7 +135,6 @@
     gap: 2px;
 }
 
-/* ===== LINK DE DETALLES ===== */
 .details-link {
     margin-top: 8px;
     text-align: center;
@@ -158,7 +151,6 @@
     background: rgba(0, 229, 255, 0.3);
 }
 
-/* ===== ESTADO: CARGANDO ===== */
 .loader {
     width: 60px;
     height: 60px;
@@ -175,7 +167,6 @@
     }
 }
 
-/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
     .game-card {
         width: 90%;

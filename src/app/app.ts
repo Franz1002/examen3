@@ -9,6 +9,7 @@ import { FbiComponent } from './components/fbi/fbi';
 import { QuotesapiComponent } from './components/quotesapi/quotesapi';
 import { HomeComponent } from './components/home/home';
 import { WeatherapiComponent } from './components/weatherapi/weatherapi';
+import { OpenLibrary } from './components/openlibrary/openlibrary';
 @Component({
   selector: 'app-root',
   imports: [
@@ -20,12 +21,13 @@ import { WeatherapiComponent } from './components/weatherapi/weatherapi';
     NasaComponent,
     FbiComponent,
     QuotesapiComponent,
-    WeatherapiComponent,
+    WeatherapiComponent, 
+    OpenLibrary,
     HomeComponent,
   ],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
-  activeTab = ''; // Lo dejamos vacío si ya quieres mostrar app.html directamente
+  activeTab = '';
 }

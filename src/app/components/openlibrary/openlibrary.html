@@ -1,0 +1,21 @@
+<div class="container" *ngIf="!loading && !error; else loadingOrError">
+    <h1 class="title">📚 OpenLibrary - Libros</h1>
+
+    <div class="book-grid">
+        <div class="book-card" *ngFor="let book of books">
+            <img [src]="getCover(book)" [alt]="book.title" class="book-cover" />
+            <div class="book-info">
+                <h2>{{ book.title }}</h2>
+                <p><strong>Autor(es):</strong> {{ book.author_name?.join(', ') || 'Desconocido' }}</p>
+                <p><strong>Año publicación:</strong> {{ book.first_publish_year || 'N/A' }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #loadingOrError>
+    <div class="status">
+        <div *ngIf="loading" class="loader"></div>
+        <p *ngIf="error">{{ error }}</p>
+    </div>
+</ng-template>

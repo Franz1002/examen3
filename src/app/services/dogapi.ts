@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 interface DogResponse {
-  message: string; // URL de la imagen
+  message: string; 
   status: string;
 }
 

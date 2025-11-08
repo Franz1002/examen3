@@ -17,19 +17,16 @@ export class QuotesapiService {
   getRandomQuote(): Observable<Quote> {
     return this.http.get<Quote>(this.quoteApi).pipe(
       switchMap((quote) => {
-        // 🔹 Traducción del contenido principal
         const translateContent$ = this.http.get<any>(
           `${this.translateApi}?q=${encodeURIComponent(quote.content)}&langpair=en|es`
         );
 
-        // 🔹 Traducción de los tags (uno por uno)
         const translateTags$ = quote.tags.map(tag =>
           this.http.get<any>(
             `${this.translateApi}?q=${encodeURIComponent(tag)}&langpair=en|es`
           )
         );
 
-        // Ejecuta todas las traducciones al mismo tiempo
         return forkJoin([translateContent$, ...translateTags$]).pipe(
           map(([translatedContent, ...translatedTags]) => ({
             ...quote,

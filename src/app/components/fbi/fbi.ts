@@ -22,7 +22,7 @@ export class FbiComponent implements OnInit {
   ngOnInit(): void {
     this.fbiService.getWanted().subscribe({
       next: (data) => {
-        this.wantedList = data.slice(0, 20); // solo los primeros 20
+        this.wantedList = data.slice(0, 20); 
         this.loading = false;
       },
       error: (err) => {
@@ -33,8 +33,6 @@ export class FbiComponent implements OnInit {
     });
   }
 
-
-  
   getImage(person: FbiWanted): string {
     if (person.images && person.images.length > 0 && person.images[0].original) {
       return person.images[0].original;

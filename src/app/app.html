@@ -1,23 +1,24 @@
 <main class="main">
   <h1 class="title">EXAMEN FINAL - CONSUMO DE 8 APIS</h1>
 
-  <!-- CONTENEDOR PRINCIPAL -->
   <div class="container">
 
-    <!-- TABS CON ESTILO MODERNO -->
     <div class="tabs">
       <div class="tab" [class.active]="activeTab === 'home'" (click)="activeTab = 'home'"><span>🏠</span> Inicio</div>
-      <div class="tab" [class.active]="activeTab === 'freetogame'" (click)="activeTab = 'freetogame'"><span>1</span> FreeToGame</div>
+      <div class="tab" [class.active]="activeTab === 'freetogame'" (click)="activeTab = 'freetogame'"><span>1</span>
+        FreeToGame</div>
       <div class="tab" [class.active]="activeTab === 'dogapi'" (click)="activeTab = 'dogapi'"><span>2</span> API 2</div>
-      <div class="tab" [class.active]="activeTab === 'countries'" (click)="activeTab = 'countries'"><span>3</span> API 3</div>
+      <div class="tab" [class.active]="activeTab === 'countries'" (click)="activeTab = 'countries'"><span>3</span> API 3
+      </div>
       <div class="tab" [class.active]="activeTab === 'nasa'" (click)="activeTab = 'nasa'"><span>4</span> API 4</div>
       <div class="tab" [class.active]="activeTab === 'fbi'" (click)="activeTab = 'fbi'"><span>5</span> API 5</div>
-      <div class="tab" [class.active]="activeTab === 'quotesapi'" (click)="activeTab = 'quotesapi'"><span>6</span> API 6</div>
-      <div class="tab" [class.active]="activeTab === 'weatherapi'" (click)="activeTab = 'weatherapi'"><span>7</span> API 7</div>
-      <div class="tab" [class.active]="activeTab === 'api8'" (click)="activeTab = 'api8'"><span>8</span> API 8</div>
+      <div class="tab" [class.active]="activeTab === 'quotesapi'" (click)="activeTab = 'quotesapi'"><span>6</span> API 6
+      </div>
+      <div class="tab" [class.active]="activeTab === 'weatherapi'" (click)="activeTab = 'weatherapi'"><span>7</span> API
+        7</div>
+      <div class="tab" [class.active]="activeTab === 'openlibrary'" (click)="activeTab = 'openlibrary'"><span>8</span> API 8</div>
     </div>
 
-    <!-- CONTENIDO DE LAS TABS -->
     <div class="form-section">
       <section class="tab-content">
         <app-home *ngIf="activeTab === 'home'"></app-home>
@@ -50,8 +51,8 @@
           <app-weatherapi></app-weatherapi>
         </div>
 
-        <div *ngIf="activeTab === 'api8'">
-          <h2>API 8 - En desarrollo...</h2>
+        <div *ngIf="activeTab === 'openlibrary'">
+          <app-openlibrary></app-openlibrary>
         </div>
       </section>
     </div>

@@ -15,7 +15,7 @@ export class FbiService {
 
   getWanted(): Observable<FbiWanted[]> {
     return this.http.get<any>(this.apiUrl).pipe(
-      map(res => res.items) // el array está dentro de 'items'
+      map(res => res.items) 
     );
   }
 }
